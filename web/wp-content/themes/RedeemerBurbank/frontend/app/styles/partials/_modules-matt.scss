@@ -1,0 +1,144 @@
+/* This file is where the styling for modules will go. This employes the concepts of OOCSS, creating common base classes (using <article> as the base), and extending as necessary */
+
+/*
+
+<article class="module-name">
+	<header>
+		<h2>Module Name</h2>
+	</header>
+	<div class="content">
+		<!-- Content here -->
+	</div>
+</article>
+
+*/
+
+article.content-row {
+
+	.wrapper {
+		padding: 40px 20px;
+	}
+
+	h2, h3, h5 {
+		margin-bottom: 16px;
+		margin-top: 0;
+		padding-bottom: 0;
+		line-height: 1.25;
+	}
+
+	h3 {
+		margin-bottom: 32px;
+	}
+
+	// h5 {
+	// 	color:#808080;
+	// }
+
+	hr {
+		width: 100px;
+	}
+
+	p.highlight {
+		margin: 50px 0;
+		font-size: 22px;
+		font-style: italic;
+		text-align: center;
+		color: #808080;
+	}
+
+	p.intro {
+		font-size: 24px;
+		font-style: italic;
+		text-align: center;
+		color: #808080;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		@include breakpoint(small) {
+			font-size: 16px;
+		}
+	}
+
+	.buttons {
+		text-align: center;
+		@include breakpoint(small) {
+			button, a.button {
+				display: block;
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	&.striped {
+		background-color: #F2F2F2;
+	}
+	&.white-text {
+		&, h3, h5 {
+			color: #fff;
+		}
+		a {
+			color: #fff;
+			text-decoration: underline;
+		}
+	}
+
+	&.narrow {
+		.content {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+	}
+
+	&.has-info {
+		.info {
+			border-top: 4px solid $greyseparator;
+			padding-top: 15px;
+			ul {
+				padding-left: 20px;
+			}
+		}
+	}
+
+	@include breakpoint(medium-large) {
+		.quick-links {
+			column-count: 3;
+			column-gap: 60px;
+		}
+		&.two-col {
+			.text {
+				column-count: 2;
+				column-gap: 60px;
+			}
+		}
+		&.has-info {
+			.content {
+				max-width: 100%;
+			}
+			h3, hr {
+				margin-left: 30%;
+			}
+			.text {
+				float: right;
+				width: 70%;
+				h3, hr {
+					margin-left: 0%;
+				}
+			}
+			.info {
+				float: left;
+				width: 20%;
+			}
+			&.right {
+				h3, hr {
+					margin-left: 0;
+				}
+				.text {
+					float: left;
+				}
+				.info {
+					float: right;
+				}
+			}
+		}
+	}
+}

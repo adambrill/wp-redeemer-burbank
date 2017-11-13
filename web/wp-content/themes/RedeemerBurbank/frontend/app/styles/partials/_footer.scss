@@ -1,0 +1,49 @@
+.site-footer {
+	background-color: $darkblue;
+	color: #fff;
+	p {
+		float: left;
+		margin: 10px 0;
+	}
+	p.address {
+		float: right;
+	}
+	ul.social {
+		list-style: none;
+		float: right;
+		margin: 10px 25px;
+		li {
+			display: inline;
+			a {
+				display: inline-block;
+				height: 32px;
+				width: 32px;
+				text-indent: -5000px;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			&.facebook a {
+				background-image: url(../images/icon-facebook.png);
+			}
+			&.twitter a {
+				background-image: url(../images/icon-twitter.png);
+			}
+			&.instagram a {
+				background-image: url(../images/icon-instagram.png);
+			}
+		}
+	}
+	a {
+		color: #fff;
+		text-decoration: underline;
+	}
+	ul {
+		float: right;
+		li {
+			display: inline-block;
+			a {
+				color: #fff;
+			}
+		}
+	}
+}

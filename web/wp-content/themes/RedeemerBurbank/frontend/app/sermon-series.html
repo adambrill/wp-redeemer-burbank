@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Garden City Church: Sermon Series</title>
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+
+
+	<!-- build:css styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i|Overpass:300,900" rel="stylesheet">
+	
+</head>
+<body ng-app="app">
+	
+	<div class="site-wrapper">
+		<header class="site-header">
+			<div class="wrapper">
+				<a href="/" class="logo">Garden City Church</a>
+				<nav>
+					<ul>
+						<li><a href="#">Sundays</a></li>
+						<li class="selected"><a href="#">Sermons</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Connect</a></li>
+						<li><a href="#">Give</a></li>
+						<li>
+							<a href="#" class="menu">
+								<span class="hamburger">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+								Menu
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<article class="hero-banner" style="background-image: url('/images/bg-latest-sermon.jpg');">
+			<div class="wrapper">
+				<div class="content">
+					<h1>Sermon Series</h1>
+				</div>
+			</div>
+		</article>
+
+		<article class="featured-series">
+			<div class="wrapper">
+				<a class="action">See all</a>
+				<h6>Featured Series</h6>
+				<hr />
+				<ul>
+					<li>
+						<a href="#" angular-ripple>
+							<img src="http://placehold.it/550x235" />
+							<h5>Summer Psalms</h5>
+						</a>
+					</li>
+					<li>
+						<a href="#" angular-ripple>
+							<img src="http://placehold.it/550x235" />
+							<h5>Advent: The Pursuing God</h5>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+
+		<article class="all-series">
+			<div class="wrapper">
+				<h6>All Series</h6>
+				<hr />
+				<form>
+					<div class="search">
+						<input type="text" name="query" placeholder="Search by" />
+						<button type="submit" class="secondary" angular-ripple>Search</button>
+					</div>
+					<select>
+						<option>Newest</option>
+					</select>
+				</form>
+				<ul>
+					<li>
+						<a href="#" angular-ripple>
+							<img src="http://placehold.it/360x155" />
+							<h5>Summer Psalms</h5>
+						</a>
+					</li>
+					<li>
+						<a href="#" angular-ripple>
+							<img src="http://placehold.it/360x155" />
+							<h5>Risk or Rust</h5>
+						</a>
+					</li>
+					<li>
+						<a href="#" angular-ripple>
+							<img src="http://placehold.it/360x155" />
+							<h5>Advent: The Pursuing God</h5>
+						</a>
+					</li>
+					<li>
+						<a href="#" angular-ripple>
+							<img src="http://placehold.it/360x155" />
+							<h5>Summer Psalms</h5>
+						</a>
+					</li>
+					<li>
+						<a href="#" angular-ripple>
+							<img src="http://placehold.it/360x155" />
+							<h5>Risk or Rust</h5>
+						</a>
+					</li>
+					<li>
+						<a href="#" angular-ripple>
+							<img src="http://placehold.it/360x155" />
+							<h5>Advent: The Pursuing God</h5>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+		
+		<footer class="site-footer">
+			<div class="wrapper">
+				<p>&copy; Copyright 2017</p>
+				<p class="address">400 N. Winchester Blvd., Santa Clara, CA 95050</p>
+				<!--<ul>
+					<li><a href="#">Footer Link</a></li>
+				</ul>-->
+			</div>
+		</footer>
+	</div>
+	
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+		e.src='https://www.google-analytics.com/analytics.js';
+		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+		ga('create','UA-XXXXX-X');ga('send','pageview');
+	</script>
+
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/bower_components/angular/angular.js"></script>
+	<script src="/bower_components/angular-ui-mask/dist/mask.js"></script>
+	<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="/bower_components/angular-ripple/angular-ripple.js"></script>
+	<script src="/bower_components/angular-audio/app/angular.audio.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	
+	<!-- build:js scripts/main.js -->
+	<script src="scripts/main.js"></script>
+	<!-- endbuild -->
+</body>
+</html>

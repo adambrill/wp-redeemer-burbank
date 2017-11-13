@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Garden City Church</title>
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+
+
+	<!-- build:css styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i|Overpass:300,900" rel="stylesheet">
+	
+</head>
+<body ng-app="app">
+	
+	<div class="site-wrapper">
+		<header class="site-header">
+			<div class="wrapper">
+				<a href="/" class="logo">Garden City Church</a>
+				<nav>
+					<ul>
+						<li><a href="#">Sundays</a></li>
+						<li class="selected"><a href="#">Sermons</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Connect</a></li>
+						<li><a href="#">Give</a></li>
+						<li class="menu">
+							<a href="#" class="more-nav">
+								<span class="hamburger">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+								Menu
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<div class="nav-menu">
+			<div class="content">
+				<a href="#" class="more-nav close">
+					<span class="hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+					Close
+				</a>
+				<ul>
+					<li><a href="#">About</a>
+						<ul>
+							<li><a href="#">Mission</a></li>
+							<li><a href="#">Our Story</a></li>
+							<li><a href="#">Leadership</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Resources</a></li>
+					<li><a href="#">Events</a></li>
+					<li><a href="#">Connect</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<article class="hero-banner" style="background-image: url('/images/hero-connect.jpg');">
+			<div class="wrapper">
+				<div class="content">
+					<h1>Connect</h1>
+					<p>If you would like more information about how to connect with our church family please fill out the connection form below.</p>
+				</div>
+			</div>
+		</article>
+
+		<article class="form">
+			<div class="wrapper">
+				<form action="" method="post">
+					<div class="group">
+						<div class="item" float-label>
+							<label for="status">I am a...</label>
+							<select id="status">
+								<option></option>
+								<option>Visitor</option>
+								<option>Member</option>
+							</select>
+						</div>
+						<div class="item" float-label>
+							<label for="found">I found Garden City...</label>
+							<select id="found">
+								<option></option>
+								<option>Social Media</option>
+								<option>Acts 29 Network</option>
+								<option>Friend / Word of Mouth</option>
+								<option>Other</option>
+							</select>
+						</div>
+					</div>
+					<div class="group">
+						<div class="item" float-label>
+							<label for="first-name">First Name</label>
+							<input type="text" id="first-name" />
+						</div>
+						<div class="item" float-label>
+							<label for="last-name">Last Name</label>
+							<input type="text" id="last-name" />
+						</div>
+					</div>
+					<div class="group">
+						<div class="item" float-label>
+							<label for="phone">Phone</label>
+							<input type="tel" id="phone" ng-model="phone" ui-mask="(999) 999-9999" />
+						</div>
+					</div>
+					<div class="group">
+						<div class="item" float-label>
+							<label for="email">Email</label>
+							<input type="email" id="email" />
+						</div>
+						<div class="item">
+							<label for="newsletter"><input type="checkbox" id="newsletter" /> Receive our newsletter</label>
+						</div>
+					</div>
+					<div class="group">
+						<div class="item" float-label>
+							<label for="comment">Comment or Question</label>
+							<textarea id="comment"></textarea>
+						</div>
+					</div>
+					<div class="buttons">
+						<button type="button" angular-ripple>Submit</button>
+						<button type="button" class="secondary" angular-ripple>Clear</button>
+					</div>
+				</form>
+			</div>
+		</article>
+		
+		<footer class="site-footer">
+			<div class="wrapper">
+				<p>&copy; Copyright 2017</p>
+				<p class="address">400 N. Winchester Blvd., Santa Clara, CA 95050</p>
+				<!--<ul>
+					<li><a href="#">Footer Link</a></li>
+				</ul>-->
+			</div>
+		</footer>
+	</div>
+	
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+		e.src='https://www.google-analytics.com/analytics.js';
+		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+		ga('create','UA-XXXXX-X');ga('send','pageview');
+	</script>
+
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/bower_components/angular/angular.js"></script>
+	<script src="/bower_components/angular-ui-mask/dist/mask.js"></script>
+	<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="/bower_components/angular-ripple/angular-ripple.js"></script>
+	<script src="/bower_components/angular-audio/app/angular.audio.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	
+	<!-- build:js scripts/main.js -->
+	<script src="scripts/main.js"></script>
+	<!-- endbuild -->
+</body>
+</html>

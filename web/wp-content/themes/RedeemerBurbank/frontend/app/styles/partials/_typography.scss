@@ -1,0 +1,144 @@
+/* http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax */
+
+/*@font-face {
+	font-family: 'Avenir-Medium';
+	src: url('../fonts/AvenirLTStd-Medium.eot');
+	src: url('../fonts/AvenirLTStd-Medium.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/AvenirLTStd-Medium.woff') format('woff'),
+		 url('../fonts/AvenirLTStd-Medium.ttf') format('truetype'),
+		 url('../fonts/AvenirLTStd-Medium.svg#MyriadProItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Avenir-Heavy';
+	src: url('../fonts/AvenirLTStd-Heavy.eot');
+	src: url('../fonts/AvenirLTStd-Heavy.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/AvenirLTStd-Heavy.woff') format('woff'),
+		 url('../fonts/AvenirLTStd-Heavy.ttf') format('truetype'),
+		 url('../fonts/AvenirLTStd-Heavy.svg#MyriadProItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MyriadProItalic';
+	src: url('../../fonts/myriadpro-it-webfont.eot');
+	src: url('../../fonts/myriadpro-it-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../../fonts/myriadpro-it-webfont.woff') format('woff'),
+		 url('../../fonts/myriadpro-it-webfont.ttf') format('truetype'),
+		 url('../../fonts/myriadpro-it-webfont.svg#MyriadProItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}*/
+
+html {
+	font-family: $serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+button,
+input,
+select,
+textarea {
+	font-family: $serif;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $sans;
+	font-weight: 900;
+	margin: 10px 0;
+	color: $darkblue;
+	line-height: 1.25;
+}
+h1 {
+	font-size: 64px;
+	font-weight: 900;
+	letter-spacing: 2.04px;
+}
+h2 {
+	font-size: 64px;
+	font-family: $serif;
+	font-weight: 500;
+}
+h3 {
+	font-size: 48px;
+	font-family: $serif;
+	font-weight: 500;
+	letter-spacing: 1.28px;
+}
+h4 {
+	font-size: 28px;
+	font-family: $serif;
+	font-weight: 500;
+	letter-spacing: 0;
+}
+h5 {
+	font-size: 22px;
+	font-family: $serif;
+	font-weight: 500;
+	letter-spacing: 0;
+	font-style: italic;
+}
+h6 {
+	font-size: 16px;
+	font-family: $sans;
+	font-weight: 900;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+}
+
+@include breakpoint(small) {
+	h1 {
+		font-size: 36px;
+	}
+	h2 {
+		font-size: 36px;
+	}
+	h3 {
+		font-size: 28px;
+	}
+	h4 {
+		font-size: 21px;
+		letter-spacing: 0;
+	}
+	h5 {
+		font-size: 16px;
+		letter-spacing: 0;
+	}
+	h6 {
+		font-size: 16px;
+		letter-spacing: 8px;
+	}
+}
+
+blockquote{
+	display: block;
+	padding: 10px 0 0 35px;
+	margin: 0;
+	position: relative;
+	font-family: Georgia, serif;
+	//font-size: 18px;
+	line-height: 1.2;
+	color: #343A55;
+	//text-align: justify;
+}
+
+blockquote::before{
+	content: "\201C"; /*Unicode for Left Double Quote*/
+	position: absolute;
+	left: 0;
+	top: 5px;
+	font-family: Georgia, serif;
+	font-size: 50px;
+	font-weight: bold;
+	color: #343A55;
+}
+
+ul, ol {
+	ul, ol {
+		margin: 0;
+	}
+}

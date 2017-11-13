@@ -1,0 +1,18 @@
+{
+  "name": "frontend",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "angular": "1.6.3",
+    "angular-ui-mask": "~1.8.7",
+    "angular-sanitize": "1.6.3",
+    "angular-ripple": "*"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "resolutions": {
+    "angular": "1.6.3"
+  }
+}
