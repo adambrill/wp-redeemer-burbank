@@ -1,0 +1,270 @@
+$inputs-list: 'input[type="text"]',
+			  'input[type="password"]',
+			  'input[type="search"]',
+			  'input[type="number"]',
+			  'input[type="datetime"]',
+			  'input[type="datetime-local"]',
+			  'input[type="date"]',
+			  'input[type="month"]',
+			  'input[type="time"]',
+			  'input[type="week"]',
+			  'input[type="email"]',
+			  'input[type="url"]',
+			  'input[type="tel"]',
+			  'input[type="color"]';
+$input-selectors: ();
+
+@each $item in $inputs-list {
+	$input-selectors: join($input-selectors, unquote($item), comma) !global;
+}
+
+#{$input-selectors},
+textarea,
+select {
+	transition: border linear .2s, box-shadow linear .2s;
+	display: inline-block;
+	width: 250px;
+	@include breakpoint(small) {
+		width: 100%;
+	}
+	padding: 10px 15px;
+	border: 1px solid #ccc;
+	border-radius: 0;
+	background-color: #fff;
+	vertical-align: middle;
+	// Webkit
+	-webkit-appearance: none;
+	&:focus {
+		border-color: #66afe9;
+		outline: none;
+	}
+}
+
+input[type="search"] {
+	padding: 0 25px 0 5px;
+	//background: #fff image-url("icon/search.png") 98% 50% no-repeat;
+}
+
+textarea {
+	width: 100%;
+	height: 200px;
+}
+
+select {
+	position: relative;
+	padding-right: 50px;
+	border-radius: 0;
+	background: #fff url("../images/select-arrow.png") no-repeat 100% 65%;
+	// Mozilla
+	-moz-appearance: none;
+	text-indent: 0.01px;
+    text-overflow: '';
+
+	// Webkit
+	-webkit-appearance: none;
+}
+// IE
+select::-ms-expand {
+	display: none;
+}
+.lt-ie10 select {
+	padding: 0 0 0 5px;
+	background: white;
+}
+
+button,
+a.button {
+	height: auto;
+	width: auto;
+	padding: 10px 35px;
+	border: 0;
+	background-color: $red;
+	color: #fff;
+	font-family: $sans;
+	font-size: 18px;
+	font-weight: 900;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	white-space: nowrap;
+
+	&.secondary {
+		background-color: $blue;
+	}
+
+	&:disabled {
+		opacity: .5;
+	}
+}
+
+form,
+.form {
+	div.validationSummary {
+		margin-bottom: 10px;
+		color: #BE3438;
+		ul {
+			@include layout-list;
+		}
+	}
+	div.item {
+		@extend .clearfix;
+		margin-bottom: 5px;
+		> label {
+			display: inline-block;
+			//font-weight: bold;
+			span {
+				font-weight: normal;
+			}
+		}
+		input {
+			vertical-align: baseline;
+		}
+		> ul {
+			@include layout-list;
+		}
+		&.horizontal {
+			> label {
+				display: inline-block;
+				margin-right: 5px;
+			}
+		}
+	}
+	.item.fl-enabled {
+        position: relative;
+        > label, .label {
+			position: absolute;
+            top: 20px;
+			left: 1px;
+            padding: 0 15px;
+            color: #acacac;
+            opacity: 0;
+            font-size: 12px;
+			line-height: 24px;
+			z-index: 2;
+		}
+        #{$input-selectors},
+        textarea,
+		select {
+            padding-top: 25px;
+            padding-bottom: 10px;
+			margin-top: 5px;
+        }
+		&.fl-active {
+            > label, .label {
+                top: 10px;
+				//font-size: 12px;
+                opacity: 1;
+            }
+        }
+        &.fl-animate {
+            > label, .label {
+                transition: all .25s;
+            }
+        }
+    }
+	div.group {
+		/*@extend .clearfix;
+		@include breakpoint(medium-large) {
+			div.item {
+				float: left;
+				padding: 0 10px 0 0;
+				&:last-child {
+					padding-right: 0;
+				}
+				#{$input-selectors},
+				textarea,
+				select {
+					width: 100%;
+				}
+				&.horizontal {
+					#{$input-selectors},
+					textarea,
+					select {
+						width: auto;
+					}
+				}
+			}
+		}*/
+		@include breakpoint(medium-large) {
+			display: flex;
+			margin: 0 -10px;
+			div.item {
+				margin: 10px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				flex-grow: 1;
+				flex-shrink: 1;
+				flex-basis: 0;
+				#{$input-selectors},
+				textarea,
+				select {
+					width: 100%;
+				}
+			}
+		}
+	}
+	/*div.vertical {
+		div.item {
+			//padding-left: 250px;
+			> label {
+				float: left;
+				width: 33%;
+			}
+			#{$input-selectors},
+			textarea,
+			select {
+				max-width: 67%;
+			}
+			.radio-list,
+			.checkbox-list {
+				float: left;
+			}
+		}
+		&.fixed {
+			div.item {
+				padding-left: 250px;
+				> label {
+					float: left;
+					width: 250px;
+					margin-left: -250px;
+				}
+				#{$input-selectors},
+				textarea,
+				select {
+					max-width: auto;
+				}
+			}
+		}
+	}*/
+	div.buttons {
+		@extend .clearfix;
+		button,
+		.button {
+			float: right;
+			margin: 10px 0 0 10px;
+			@include breakpoint(small) {
+				float: none;
+				width: 100%;
+				margin: 0 0 10px 0;
+			}
+		}
+	}
+	input[type="radio"],
+	input[type="checkbox"] {
+		margin-bottom: 0;
+		margin-right: 5px;
+	}
+	.radio-list,
+	.checkbox-list {
+		input, label {
+			display: inline-block;
+		}
+		&.inline {
+			li {
+				display: inline-block;
+				margin-right: 10px;
+			}
+		}
+	}
+}

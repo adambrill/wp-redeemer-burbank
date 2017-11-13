@@ -1,0 +1,17 @@
+[class*="icon-"] {
+	display: inline-block;
+	vertical-align: middle;
+	text-indent: -5000px;
+	background-repeat: no-repeat;
+	&.text {
+		width: auto;
+		height: auto;
+		text-indent: 0;
+	}
+}
+
+.icon-arrow-down {
+	width: 37px;
+	height: 13px;
+	background-image: url('../images/icon-arrow-down.svg');
+}

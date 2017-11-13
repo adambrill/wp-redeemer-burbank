@@ -1,0 +1,66 @@
+// Layout Variables
+$sidebar: 275px;
+
+// Layout Styles
+.layout {
+	> aside {
+		
+	}
+	> section {
+		
+	}
+}
+
+.site-wrapper {
+	max-width: $contentmaxwidth;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.wrapper {
+	@extend .clearfix;
+	max-width: $contentwidth;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+// Generic Grid
+@include breakpoint(medium-large) {
+	.grid {
+		$spacing: 10px;
+		display: table;
+		width: 100%;
+		//@include experimental-value(width, calc(100% + #{$spacing * 2})); // Better alignment for everything except IE8 with this
+		border-spacing: $spacing;
+		margin: -$spacing; // Offset the border-spacing around the outside
+		.col {
+			//*behavior: url(/static/css/htc/boxsizing.htc);
+			display: table-cell;
+			width: 50%;
+			vertical-align: top;
+		}
+		&.three .col {
+			width: 33.33%;
+		}
+		&.four .col {
+			width: 25%;
+		}
+		&.border .col {
+			border-left: 1px solid #cccccc;
+			padding: 0 30px;
+			&:first-child {
+				border-left: 0;
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		&.bg {
+			.col {
+				background: #f3f3f3;
+				padding: 20px;
+			}
+		}
+	}
+}

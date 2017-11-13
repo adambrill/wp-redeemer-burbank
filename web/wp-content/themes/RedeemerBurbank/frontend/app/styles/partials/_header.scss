@@ -1,0 +1,97 @@
+.site-header {
+
+	position: relative;
+	height: 75px;
+	padding: 20px 0;
+	z-index: 2;
+
+	.logo {
+		float: left;
+		/*width: 345px;
+		height: 35px;
+		background: url(../images/logo.png);*/
+		width: 172px;
+		height: 43px;
+		background: url(../images/logo.png) no-repeat;
+		background-size: 100%;
+		text-indent: -5000px;
+	}
+
+	nav {
+		float: right;
+		ul {
+			@include layout-list();
+			font-size: 16px;
+			font-weight: 900;
+			li {
+				display: inline-block;
+				a {
+					padding: 5px 10px;
+					color: #fff;
+					text-transform: uppercase;
+					font-family: $sans;
+					&.more-nav {
+						padding: 0 10px;
+					}
+				}
+				@include breakpoint(small) {
+					display: none;
+					&.menu {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.nav-menu {
+	display: none;
+	$width: 200px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 0;
+	bottom: 0;
+	margin-left: ($contentwidth / 2 - $width);
+	font-family: $sans;
+	background: rgba(0,0,0,.8);
+	z-index: 3;
+	overflow: auto;
+	.content {
+		width: $width;
+		padding: 20px;
+		text-align: right;
+		a {
+			color: #fff;
+			&.more-nav {
+				margin-bottom: 40px;
+			}
+		}
+		ul {
+			@include layout-list();
+			clear: both;
+			color: #fff;
+			font-weight: 900;
+			text-align: right;
+			font-size: 22px;
+			ul {
+				font-family: $serif;
+				font-size: 14px;
+				font-style: italic;
+				font-weight: 500;
+			}
+		}
+	}
+	@media only screen and (max-width: $contentwidth) {
+		left: auto;
+	}
+	@include breakpoint(small) {
+		left: 0;
+		margin-left: 0;
+		.content {
+			width: auto;
+		}
+	}	
+}

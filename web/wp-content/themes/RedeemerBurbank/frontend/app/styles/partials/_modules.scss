@@ -1,0 +1,400 @@
+/* This file is where the styling for modules will go. This employes the concepts of OOCSS, creating common base classes (using <article> as the base), and extending as necessary */
+
+/*
+
+<article class="module-name">
+	<div class="wrapper">
+		<header>
+			<h2>Module Name</h2>
+		</header>
+		<!-- Content here -->
+	</div>
+</article>
+
+*/
+
+article {
+	// Careful what's added here. This is the base class, and is used everywhere
+	background-position: 50% 0; 
+	background-size: cover;
+	.wrapper {
+		padding: 80px 20px;
+	}
+	&.bp-c {
+		background-position: 50%;
+	}
+	&.bp-r {
+		background-position: 100% 50%;
+	}
+	&.bp-b {
+		background-position: 50% 100%;
+	}
+}
+
+article.hero-banner {
+	margin-top: -75px;
+	.wrapper {
+		position: relative;
+		height: 425px;
+		@include breakpoint(small) {
+			height: 275px;
+		}
+	}
+	.content {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		padding: 0 20px;
+		text-align: center;
+	}
+	h1 {
+		color: #fff;
+		font-size: 64px;
+		font-weight: 900;
+		@include breakpoint(small) {
+			font-size: 36px;
+		}
+	}
+	p {
+		font-size: 24px;
+		font-style: italic;
+		color: #fff;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		@include breakpoint(small) {
+			font-size: 16px;
+		}
+	}
+	a {
+		color: #fff;
+	}
+	&.home {
+		h1 {
+			font-size: 100px;
+			@include breakpoint(small) {
+				font-size: 65px;
+			}
+		}
+		.icon-arrow-down {
+			position: absolute;
+			bottom: 25px;
+			left: 50%;
+			margin-left: -18px;
+		}
+	}
+}
+
+article.full-width-img {
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+article.divider {
+	hr {
+		border-bottom: 5px solid $darkblue;
+	}
+}
+
+article.meeting-times {
+	color: #fff;
+	h2, h6 {
+		color: #fff;
+	}
+	// div.wrapper {
+	// 	background-image: linear-gradient(90deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+	// }
+	a {
+		color: #fff;
+		text-decoration: underline;
+	}
+	div.inner {
+		text-align: center;
+		@include breakpoint(medium-large) {
+			float: right;
+			width: 40%;
+		}
+	}
+}
+
+article.latest-sermon {
+	color: #fff;
+	h2, h6 {
+		color: #fff;
+	}
+	div.wrapper {
+		background-image: linear-gradient(-90deg, rgba(0,0,0,0.00) 31%, #000000 77%);
+	}
+	div.inner {
+		@include breakpoint(medium-large) {
+			width: 50%;
+		}
+	}
+}
+
+article.recent-posts {
+	ul {
+		@include layout-list();
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 -10px;
+		@include breakpoint(small) {
+			display: block;
+		}
+		li {
+			display: flex;
+			flex: 1;
+			//flex-basis: 30%;
+			min-height: 360px;
+			margin: 10px;
+			background: $darkblue url("../images/bg-blog-default.png") no-repeat;
+			background-size: cover;
+			text-align: center;
+			a {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				flex: 1;
+				&:hover {
+					background-color: rgba(0,0,0,.25);
+				}
+			}
+			a, h3 {
+				color: #fff;
+			}
+			p {
+				margin: 0;
+			}
+		}
+	}
+}
+
+article.recent-sermons {
+	ul {
+		@include layout-list();
+		margin-bottom: 25px;
+		&.list {
+			> li {
+				padding: 15px 0;
+				border-bottom: 1px solid $greyseparator;
+				&:last-of-type {
+					border-bottom: 0;
+				}
+				h4, p {
+					margin: 0;
+				}
+				a {
+					//color: $darkblue;
+				}
+			}
+		}
+	}
+	.pagination {
+		margin-bottom: 25px;
+	}
+}
+
+article.featured-series {
+	background-color: $grey;
+	ul {
+		@include layout-list();
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 -10px;
+		@include breakpoint(small) {
+			display: block;
+		}
+		li {
+			display: flex;
+			flex-direction: column;
+			//justify-content: center;
+			flex-grow: 1;
+			flex-shrink: 1;
+			flex: 1;
+			//flex-basis: 30%;
+			margin: 0 10px;
+			text-align: center;
+			span.img {
+				display: block;
+				width: 100%;
+				padding-bottom: 45%;
+				background-position: 50%;
+				background-size: cover;
+			}
+		}
+	}
+}
+
+article.all-series {
+	background-color: $grey;
+	form {
+		@extend .clearfix;
+		div.search {
+			float: left;
+			display: inline-block;
+			width: 75%;
+			input[type="text"] {
+				float: left;
+				width: 80%;
+				height: 50px;
+			}
+			button {
+				float: left;
+				width: 20%;
+				height: 50px;
+			}
+		}
+		select {
+			float: right;
+			height: 50px;
+		}
+	}
+	ul {
+		@include layout-list();
+		display: flex;
+		flex-flow: row wrap;
+		margin: 25px -10px 0 -10px;
+		@include breakpoint(small) {
+			display: block;
+		}
+		li {
+			display: flex;
+			flex-direction: column;
+			//justify-content: center;
+			flex-grow: 1;
+			flex-shrink: 1;
+			flex: 1;
+			flex-basis: 30%;
+			margin: 0 10px;
+			text-align: center;
+			img {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+article.leadership {
+	ul {
+		@include layout-list();
+		margin-bottom: 100px;
+		li {
+			@extend .clearfix;
+			margin-bottom: 20px;
+			> img {
+				max-width: 100%;
+			}
+			@include breakpoint(medium-large) {
+				> img {
+					float: left;
+					width: 45%;
+				}
+				.content {
+					float: right;
+					width: 55%;
+					padding-left: 20px;
+				}
+			}
+			@include breakpoint(medium) {
+				> img {
+					width: 55%;
+				}
+				.content {
+					width: 45%;
+				}
+			}
+		}
+	}
+}
+
+article.leadership-list {
+	ul {
+		@include layout-list();
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 -10px;
+		@include breakpoint(small) {
+			display: block;
+		}
+		li {
+			display: flex;
+			flex: 1;
+			flex-basis: 33.33%;
+			padding: 10px;
+			//flex-grow: 0;
+			//min-height: 200px;
+			//border: 1px solid $greyseparator;
+			margin: -1px 0 0 -1px;
+			text-align: center;
+			&:first-of-type,
+			&:nth-child(1n+3) {
+				border-left: 0;
+			}
+			&:nth-child(3n),
+			&:last-of-type {
+				border-right: 0;
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+article.upcoming-events {
+	ul {
+		@include layout-list();
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 -10px;
+		@include breakpoint(small) {
+			display: block;
+		}
+		li {
+			display: flex;
+			flex: 1;
+			flex-basis: 33.33%;
+			//flex-grow: 0;
+			min-height: 200px;
+			border: 1px solid $greyseparator;
+			margin: -1px 0 0 -1px;
+			text-align: center;
+			&:first-of-type,
+			&:nth-child(1n+3) {
+				border-left: 0;
+			}
+			&:nth-child(3n),
+			&:last-of-type {
+				border-right: 0;
+			}
+			a, span {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				flex: 1;
+			}
+			a:hover {
+				background-color: rgba(0,0,0,.1);
+			}
+			a h5 {
+				color: $red;
+			}
+			p {
+				color: $darkblue;
+				margin: 0;
+			}
+			@include breakpoint(small) {
+				border: none;
+				border-bottom: 1px solid $greyseparator;
+				&:last-of-type {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
