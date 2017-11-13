@@ -47,7 +47,8 @@
     "squizlabs/php_codesniffer": "^2.9.0",
     "wp-coding-standards/wpcs": "dev-master",
     "phpunit/phpunit": "^6.1",
-    "brain/monkey": "^1.4"
+    "brain/monkey": "^1.4",
+    "advanced-custom-fields/advanced-custom-fields-pro": "*"
   },
   "config": {
     "vendor-dir": "vendor",
@@ -80,7 +81,8 @@
   "scripts": {
     "build-assets": [
       "@prepare-for-pantheon",
-      "composer install --no-dev --no-ansi --no-interaction --optimize-autoloader --no-progress"
+      "composer install --no-dev --no-ansi --no-interaction --optimize-autoloader --no-progress",
+      "cd web/wp-content/themes/RedeemerBurbank/frontend && npm install && bower install && gulp"
     ],
     "prepare-for-pantheon": "WordPressProject\\composer\\ScriptHandler::prepareForPantheon",
     "cleanup": [
